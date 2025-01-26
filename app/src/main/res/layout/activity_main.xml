@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E0D41"
+    android:padding="16dp">
+
+    <!-- Solve Equation Title -->
+    <TextView
+        android:id="@+id/solveEquationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Solve Your Equation"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title for Coefficients -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter coefficient of equation"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/solveEquationTitle" />
+
+    <!-- White Background for Coefficients Section and Below -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/formContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <!-- Coefficient a and X² label -->
+        <EditText
+            android:id="@+id/inputA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#020202"
+            android:hint="a"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:textColor="#050505"
+            android:textColorHint="#000000"
+            app:layout_constraintEnd_toStartOf="@+id/multiplyLabel1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <!-- Multiply label (X² +) -->
+        <TextView
+            android:id="@+id/multiplyLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X² +"
+            android:textColor="#050505"
+            app:layout_constraintStart_toEndOf="@id/inputA"
+            app:layout_constraintTop_toTopOf="@id/inputA"
+            app:layout_constraintEnd_toStartOf="@+id/inputB" />
+
+        <!-- Coefficient b and X label -->
+        <EditText
+            android:id="@+id/inputB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:hint="b"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:textColor="#0E0E0E"
+            android:textColorHint="#070707"
+            app:layout_constraintStart_toEndOf="@id/multiplyLabel1"
+            app:layout_constraintEnd_toStartOf="@+id/multiplyLabel2"
+            app:layout_constraintTop_toTopOf="@id/inputA"
+             />
+
+        <!-- Multiply label (X +) -->
+        <TextView
+            android:id="@+id/multiplyLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X +"
+            android:textColor="#090909"
+            app:layout_constraintStart_toEndOf="@id/inputB"
+            app:layout_constraintTop_toTopOf="@id/inputB"
+            app:layout_constraintEnd_toStartOf="@+id/inputC" />
+
+        <!-- Coefficient c -->
+        <EditText
+            android:id="@+id/inputC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:hint="c"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:textColor="#050505"
+            android:textColorHint="#050505"
+            app:layout_constraintStart_toEndOf="@id/multiplyLabel2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/inputA"
+           />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Solve Button -->
+    <Button
+        android:id="@+id/btnSolve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#C70687"
+        android:text="Solve"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnReset"
+        app:layout_constraintTop_toBottomOf="@id/formContainer"
+         />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#C70687"
+        android:text="Initialise"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/btnSolve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formContainer"
+         />
+
+    <!-- Solutions -->
+    <TextView
+        android:id="@+id/solutions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Solutions"
+        android:textColor="#F1EFEF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSolve" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
